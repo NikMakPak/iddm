@@ -1,17 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/front-end/css/schedule.css">
+    <link rel="shortcut icon" href="/front-end/img/favicon32.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/3edbf969cc.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/front-end/img/favicon32.ico" type="image/x-icon">
     <title>IDDM - Schedule</title>
 </head>
 
 <body>
+    <header>
+        <div class="up">
+            <img src="/front-end/img/logo_main.png" alt="logo" srcset="/front-end/img/logo_main.svg">
+            <h1><i class="fas fa-chevron-right"></i> ПРИЕМ ПАЦИЕНТОВ</h1>
+        </div>
+        <div class="down">
+            <i class="fas far fa-clock"></i>
+            <h2>План амбулаторного приема</h2>
+        </div>
 
+        <section class="toolbar"></section>
+    </header>
+
+    <section class="container">
+        <div class="cap">
+            <h3>Пациенты по записи :</h3>
+        </div>
+        <!-- шаблон для карты пациента > -->
+        <div class="card">
+            <div class="name">
+                <div class="time">11:00</div>
+                <div class="fio">Жор Мура Тишков</div>
+            </div>
+            <div class="gen">м, 27 лет</div>
+            <div class="start"><button>Начать прием</button></div>
+
+        </div>
+        <div class="card">
+            <div class="name">
+                <div class="time">11:00</div>
+                <div class="fio">Жор Мура Тишков</div>
+            </div>
+            <div class="gen">м, 27 лет</div>
+            <div class="start"><button>Начать прием</button></div>
+
+        </div>
+        <!-- < шаблон для карты пациента -->
+    </section>
+    <footer>
+        <span>© 2022 IDDM</span>
+        <span>Автор и исходный код</span>
+        <a href="#">Github</a>
+        <span>Есть вопрос? Свяжитесь с нами</span>
+        <a href="#">Telegram</a>
+    </footer>
 </body>
 
 </html>
