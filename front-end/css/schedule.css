@@ -1,9 +1,44 @@
+/* константы */
+
+.txt_verysmallfont {
+    font-size: 18px;
+    color: #C8E0DF;
+}
+
+.link {
+    color: #90C0BF;
+}
+
+.txt_smallfont {
+    font-size: 23px;
+}
+
+.btn {
+    border: none;
+    background-color: #227E80;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+    transition: .3s;
+    text-decoration: none;
+    /* flex */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.btn:hover {
+    opacity: .7;
+}
+
+
+/* основной код */
+
 body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     display: flex;
-    /* width: 100vh; */
     height: 100vh;
     overflow: hidden;
     justify-content: space-between;
@@ -73,25 +108,12 @@ h3 {
 }
 
 .start {
-    width: 335px;
-}
-
-.start button {
-    margin-right: 10px;
-    /* transform: translateX(-50%); */
-    width: 90%;
+    width: 260px;
+    margin-right: 40px;
     height: 40px;
-    border: 3px solid #ECECEC;
-    background-color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 600;
-    color: #227E80;
-    transition: .3s;
 }
 
-.start button:hover {
+.start-btn:hover {
     /* opacity: .7; */
     background-color: #227E80;
     color: #fff;
@@ -106,4 +128,9 @@ h3 {
 .fa-clock {
     font-size: 25px;
     padding: 18px 0 0 20px;
+}
+
+footer {
+    justify-content: space-evenly;
+    align-items: center;
 }
