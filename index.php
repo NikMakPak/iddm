@@ -1,3 +1,6 @@
+<?php
+    include "actions/login.php";
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -18,14 +21,14 @@
         <img src="front-end/img/logo.png" alt="logo">
         <h1>Авторизация</h1>
         <div class="center">
-            <form action="#" method="GET">
+            <form action="index.php" method="POST">
                 <div class="field">
                     <label for="dr-id">Ваш ID</label>
-                    <input type="text" name="dr-id" id="" required>
+                    <input type="text" name="dr-id" required>
                 </div>
                 <div class="field">
                     <label for="dr-passw">Ваш пароль</label>
-                    <input type="password" name="dr-passw" id="" required>
+                    <input type="password" name="dr-passw" required>
                 </div>
                 <button type="submit">Войти</button>
             </form>
