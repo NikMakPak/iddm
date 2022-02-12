@@ -32,21 +32,17 @@ function makeCheckedQuery($sql,$needReturn = false,$arrToExecute = []){
 //раскладывает массив params на sql запрос
 function parseArrInSqlString($sql,$params){
     $i=0;
-    echo "1";
     foreach ($params as $key => $value){
         if (!is_numeric($value)){
             $value="'".$value."'";
-            echo "2";
         }
         if ($i === 0){
             $sql = $sql . " WHERE $key = $value";
-            echo "3";
         }else{
             $sql = $sql . " AND $key = $value";
         }
         $i++;
     }
-    echo "4";
     return $sql;
 }
 
@@ -56,15 +52,11 @@ function selectOne($table,$params = []){
     $sql = "SELECT * FROM $table";
 
     if (!empty($params)){
-        print_cool($params);
-        parseArrInSqlString($sql, $params);
+        $sql = parseArrInSqlString($sql, $params);
     }
     $sql = $sql . " LIMIT 1";
-    print_cool($sql);
-    exit();
     return makeCheckedQuery($sql,true)->fetch();
 }
-print_cool(selectOne('dr',['id_dr'=>'0001']));
 
 // получение всех строк из выбранной таблицы
 function selectAll($table,$params = []){
