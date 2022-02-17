@@ -1,11 +1,22 @@
 <?php
 include "database/db_functions.php";
 
-//обработка формы
-if (isset($_POST['dr-id'])){
-    $form_id = $_POST['dr-id'];
-    $form_passw = password_hash($_POST['dr-passw'],PASSWORD_DEFAULT);
+$errMsg='';
 
-    $db_row = selectOne('dr',['id_dr'=>$form_id]);
-    print_cool($db_row);
+//обработка формы
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $form_id = trim($_POST['dr-id']);
+    $form_passw = trim($_POST['dr-passw']);
+
+    $checkData = selectOne('dr',['id_dr'=>$form_id]);
+    if ((!empty($checkData)) and ($checkData['password'] === $form_passw)){
+        $dr = $checkData;
+        $_SESSION['id'] = $dr['id_dr'];
+        $_SESSION['fio'] = $dr['fio'];
+//      редирект на schedule.html
+        header('location: ' . $BASE_URL . 'schedule.php');
+    }else{
+        echo "error";
+    }
+
 }

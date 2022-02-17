@@ -54,6 +54,24 @@ footer {
     color: #fff;
 }
 
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-wrap {
+    background-color: #20403F;
+    height: 70px;
+}
+
+.exit {
+    height: 45px;
+    margin-right: 40px;
+    background-color: #3d5e61;
+    padding-right: 25px;
+}
+
 h1,
 h2,
 h3 {

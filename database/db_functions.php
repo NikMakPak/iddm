@@ -1,5 +1,6 @@
 <?php
-    require "connect.php";
+session_start();
+require "connect.php";
 
 //печать запроса в красивом виде
 function print_cool($value){
@@ -64,7 +65,7 @@ function selectAll($table,$params = []){
     $sql = "SELECT * FROM $table";
 
     if (!empty($params)){
-        parseArrInSqlString($sql, $params);
+        $sql = parseArrInSqlString($sql, $params);
     }
     return makeCheckedQuery($sql,true)->fetchAll();
 }
@@ -107,12 +108,10 @@ function update($table,$id_name,$id,$params){
     return makeCheckedQuery($sql,false,$params);
 }
 
-
-//зона вызова функ и ввода переменных
-$arrDataToInsert=[
-        'id_patient'=>'1234567891234567',
-        'tittle'=>'тестовая страница 222222',
-        'applied'=>'img.png',
-        'content'=>'это тест на тесте с тестом',
-        'for_spec_name'=>'участковый'
-];
+////проверка id доктора ??? браузер запоминает id даж при закрытии вкладки
+//function isLogin($session, $passw){
+//    if ((!empty($session)) and ($session['password'] === $passw)){
+//        $dr = $session;
+//        $_SESSION['id'] = $dr['id_dr'];
+//        $_SESSION['fio'] = $dr['fio'];
+//}

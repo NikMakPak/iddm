@@ -1,5 +1,9 @@
+<?php
+include "database/db_functions.php";
+$patient = selectOne('users_medcard', ['id_patient'=>$_GET['id']]);
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,12 +34,12 @@
     </header>
     <div class="about">
         <div class="name">
-            <div class="fio txt_bigfont"><span class="template">фио:</span>Жор Мура Тишков</div>
+            <div class="fio txt_bigfont"><span class="template">фио:</span><?php echo $patient['fio']?></div>
         </div>
 
-        <div class="gen txt_midfont"><span class="template">пол:</span>Муж </div>
-        <div class="old txt_midfont"><span class="template">возраст:</span>27 лет</div>
-        <div class="policy txt_midfont"><span class="template">№ полиса ОМС:</span>111009012</div>
+        <div class="gen txt_midfont"><span class="template">пол:</span><?php echo $patient['gen']?> </div>
+        <div class="old txt_midfont"><span class="template">возраст:</span><?php echo $patient['age']?> лет</div>
+        <div class="policy txt_midfont"><span class="template">№ полиса ОМС:</span><?php echo $patient['id_patient']?></div>
 
     </div>
     <div class="work-zone">
