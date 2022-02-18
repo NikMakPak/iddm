@@ -1,6 +1,3 @@
-<?php
-    include "actions/login.php";
-?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -11,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="front-end/css/login.css">
+    <link rel="stylesheet" href="front-end/css/logind.css">
     <link rel="shortcut icon" href="front-end/img/favicon32.ico" type="image/x-icon">
     <title>Login - IDDM</title>
 </head>
@@ -33,6 +30,7 @@
                 <button type="submit">Войти</button>
             </form>
         </div>
+        <?php include "actions/login.php"; ?>
     </div>
 </body>
 

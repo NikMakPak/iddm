@@ -1,27 +1,36 @@
 /* константы */
 
+img {
+    width: 391px;
+    height: 74px;
+}
+
 .txt_bigfont {
     text-transform: uppercase;
-    font-size: 40px;
+    font-size: 32px;
 }
 
 .txt_midfont {
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 24px;
+}
+
+.imp {
+    font-size: 20px;
 }
 
 .txt_regularfont {
-    font-size: 28px;
+    font-size: 18px;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .txt_smallfont {
-    font-size: 23px;
+    font-size: 14px;
 }
 
 .template {
     margin-right: 10px;
     color: #757572;
-    font-size: 20px;
 }
 
 .fas,
@@ -36,7 +45,6 @@
     border-radius: 4px;
     cursor: pointer;
     color: #fff;
-    transition: .3s;
     padding-right: 25px;
     text-decoration: none;
     /* flex */
@@ -47,6 +55,7 @@
 
 .btn:hover {
     opacity: .7;
+    transition: .3s;
 }
 
 .wrap {
@@ -71,6 +80,7 @@ body {
     height: 100vh;
     font-family: 'Montserrat', Arial, sans-serif;
     background-color: #FAFAFA;
+    overflow: hidden;
 }
 
 .header-wrap {
@@ -102,7 +112,7 @@ h3 {
 }
 
 .about {
-    height: 7%;
+    height: 8%;
     margin-bottom: 10px;
     background-color: #fff;
     border-bottom: 4px solid #ECECEC;
@@ -133,6 +143,7 @@ h3 {
     display: flex;
     justify-content: center;
     border-bottom: 4px solid #3d5e61;
+    align-items: center;
 }
 
 .tab {
@@ -141,31 +152,34 @@ h3 {
     width: 80%;
     height: 70px;
     border-radius: 4px;
-    opacity: 0.5;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-bottom: 4px solid #3d5e61;
-    border-left: 4px solid #3d5e61;
+    opacity: 0.5;
+    background-color: #2f4f50;
 }
 
 .tab:hover {
-    transition: .3s;
-    background-color: #3d5e61;
+    transition-property: opacity;
+    transition-duration: .4s;
+    transition-delay: 0s;
+    opacity: 1;
+    margin-bottom: -4px;
+    border-bottom: 4px solid #20807F;
 }
 
 .tab_focus {
     opacity: 1;
-    background-color: #279999;
-    border: none;
+    background-color: #20807F;
 }
 
 .tab_focus:hover {
-    background-color: #279999;
+    border: none;
+    margin-bottom: 0;
 }
 
 .fa-file-alt {
-    font-size: 45px;
+    font-size: 40px;
 }
 
 .diagnosis {
@@ -180,6 +194,11 @@ h3 {
 .diagnosis>.cap {
     background-color: #20807F;
     justify-content: start;
+    border-bottom: none;
+}
+
+.fa-stethoscope {
+    font-size: 35px;
 }
 
 .doc-area {
@@ -187,17 +206,75 @@ h3 {
 }
 
 .add-doc {
-    width: 250px;
-    height: 80px;
+    width: 200px;
+    height: 65px;
     background-color: #20807F;
 }
 
 .fa-plus-square {
-    font-size: 45px;
+    font-size: 40px;
 }
 
 .reception-back {
     height: 60px;
     width: 80%;
     margin-bottom: 20px;
+}
+
+.doc-form-area {
+    height: 100%;
+    padding: 0 15px;
+    overflow: scroll;
+}
+
+.doc {
+    height: 80px;
+    background-color: #fff;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    filter: drop-shadow(0px 4px 9px rgba(32, 128, 127, 0.1));
+}
+
+.docs {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    border-left: 4px solid #fff;
+}
+
+.docs thead {
+    position: sticky;
+    top: 0px;
+    background: white;
+    filter: drop-shadow(0px -1px 10px rgba(32, 128, 127, 0.3));
+}
+
+.docs thead>tr>td {
+    font-size: 18px;
+    color: #20807F;
+    line-height: 14px;
+    border-top: 4px solid #20807F;
+}
+
+.docs tbody>tr>td {
+    font-size: 13px;
+    color: #354251;
+    line-height: 33px;
+}
+
+.docs td {
+    white-space: pre-wrap;
+    padding: 10px 5px;
+    vertical-align: middle;
+    border-left: 3px solid #90C0BF;
+    border-bottom: 3px solid #E9F3F3;
+}
+
+.docs tbody>tr:hover td {
+    background-color: #f9fafb;
+    color: #354251;
+    cursor: pointer;
+    filter: drop-shadow(0px 10px 6px rgba(32, 128, 127, 0.20));
 }

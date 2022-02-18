@@ -1,15 +1,29 @@
 /* константы */
-.txt_verysmallfont {
+
+.txt_bigfont {
+    text-transform: uppercase;
+    font-size: 32px;
+}
+
+.txt_midfont {
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+.imp{
+    font-size: 20px;
+}
+
+.txt_regularfont {
     font-size: 18px;
-    color: #C8E0DF;
+}
+
+.txt_smallfont {
+    font-size: 14px;
 }
 
 .link {
     color: #90C0BF;
-}
-
-.txt_smallfont {
-    font-size: 23px;
 }
 
 .btn {
@@ -29,7 +43,6 @@
 .btn:hover {
     opacity: .7;
 }
-
 
 /* основной код */
 
@@ -120,9 +133,19 @@ h3 {
 
 .name {
     display: flex;
-    width: 300px;
-    justify-content: space-evenly;
+    width: 400px;
+    align-items: baseline;
 }
+.time{
+    margin: 0 30px;
+}
+.card-wrap{
+    text-align: left;
+    width: 400px;
+}
+.gen{
+    margin-right: 100px;
+ }
 
 .start {
     width: 260px;
@@ -148,6 +171,10 @@ h3 {
 }
 
 footer {
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 15px;
+}
+footer > div{
+    color: #C8E0DF;
 }

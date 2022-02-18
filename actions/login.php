@@ -1,8 +1,6 @@
 <?php
 include "database/db_functions.php";
 
-$errMsg='';
-
 //обработка формы
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $form_id = trim($_POST['dr-id']);
@@ -16,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 //      редирект на schedule.html
         header('location: ' . $BASE_URL . 'schedule.php');
     }else{
-        echo "error";
+        echo "<h3><i>Пользователь не найден</i></h3>";
     }
 
 }
