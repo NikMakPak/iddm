@@ -8,7 +8,7 @@ include "database/db_functions.php";
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="front-end/css/schedule_d.css">
+    <link rel="stylesheet" href="front-end/css/scheduled.css">
     <link rel="shortcut icon" href="front-end/img/favicon32.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/3edbf969cc.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
@@ -24,8 +24,10 @@ include "database/db_functions.php";
                 <img src="front-end/img/logo_main.png" alt="logo" srcset="front-end/img/logo_main.svg">
                 <h1><i class="fas fa-chevron-right"></i> ПРИЕМ ПАЦИЕНТОВ</h1>
             </div>
+
             <div class="logout">
-                <a href="#" class="exit btn txt_regularfont" role="button"><i class="fas fa-sign-out-alt"></i> Выйти из системы</a>
+                <div class="exit user btn txt_regularfont" role="button"><i class="fas fa-solid fa-user-doctor"></i>  <?php echo (selectOne('dr',['id_dr'=>$_SESSION['id']]))['cut_fio'] .' , ' . (selectOne('dr_id_list',['spec_dr_id'=>$_SESSION['id']]))['spec_name']?></div>
+                <a href="<?php echo $BASE_URL . 'actions/logout.php';?>" class="exit btn txt_regularfont" role="button"><i class="fas fa-sign-out-alt"></i> Выйти из системы</a>
             </div>
         </div>
         <div class="down">

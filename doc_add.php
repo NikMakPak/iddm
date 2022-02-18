@@ -4,7 +4,9 @@ $patient = selectOne('users_medcard', ['id_patient'=>$_GET['id']]);
 if (((empty($patient))==true) or (isset($_GET['id'])!=true)){
     header('location: ' . $BASE_URL);
 }
-include "actions/upload_doc.php";
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+    print_cool($_POST);
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -78,49 +80,53 @@ include "actions/upload_doc.php";
             <h2 style="color: #fff"> Диагноз</h2>
         </div>
         <div class="doc-area">
-            <button class="add-doc btn reload-btn" onclick="document.location='<?php echo $BASE_URL . 'patient.php?id=' . $_GET['id']?>'">
-                <i class="fa-solid fa-rotate-right"></i>
-            </button>
-            <button class="add-doc btn" onclick="document.location='<?php echo $BASE_URL . 'doc_add.php?id=' . $_GET['id']?>'">
-                <i class="far fa-plus-square"></i>
-                <span class="txt_regularfont"> Документ </span>
+            <button class="add-doc btn" onclick="document.location='<?php echo $BASE_URL . 'patient.php?id=' . $_GET['id']?>'">
+                <i class="fa-regular fa-rectangle-xmark"></i>
+                <span class="txt_regularfont"> Отмена </span>
             </button>
         </div>
         <section class="doc-form-area">
-
-            <table class="docs">
-                <thead>
-                <tr class="head">
-                    <td>Название документа</td>
-                    <td>Тип</td>
-                    <td>Дата и время</td>
-                    <td>Статус</td>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                $spec_name=(selectOne('dr_id_list',['spec_dr_id'=>$_SESSION['id']]))['spec_name'];
-                $docs=selectAll('docs',['id_patient'=>$_GET['id'],'for_spec_name'=>$spec_name]);
-                if (!empty($docs)) {
-                    for ($i = 0; $i <= (count($docs) - 1); $i++) {
-                        echo '<tr>
-                    <td>' . $docs[$i]['title'] . '</td>
-                    <td>' . $docs[$i]['type'] . '</td>
-                    <td>' . $docs[$i]['add_time'] . '</td>
-                    <td>' . (selectOne('doc_status_list', ['id' => ($docs[$i]['status'])]))['status'] . '</td>
-                    </tr>';
-                    }
-                }else{
-                    echo '<tr><td colspan="4"><i>...список документов пуст...</i></td></tr>';
-                }
-                ?>
-
-                </tbody>
-            </table>
+            <div class="doc-popup">
+                <div class="cap">
+                    <h3 class="popup-title txt_regularfont">Создание документа</h3>
+                </div>
+                <form action="<?php echo $BASE_URL . 'patient.php?id=' . $_GET['id']?>" method="post">
+                    <div class="field">
+                        <input type="text" class="form" name="title" placeholder="Название документа" required>
+                    </div>
+                    <div class="field">
+                        <textarea id="editor" class="form txt-area" name="content" rows="6" placeholder="Содержимое документа"></textarea>
+                    </div>
+                    <div class="wrap down">
+                        <div class="field">
+                            <input type="file" class="form down-form" name="applied">
+                        </div>
+                        <select name="type" class="form down-form">
+                            <option selected>Направление</option>
+                            <option value="справка 086у">Справка 086у</option>
+                            <option value="госпитализация">Госпитализация</option>
+                            <option value="анализ">Анализ</option>
+                            <option value="госпитализация">Госпитализация</option>
+                            <option value="на выписку">На выписку</option>
+                            <option value="справка о физ. здоровье">Справка о физ. здоровье</option>
+                        </select>
+                        <select name="for_spec_name" class="form down-form">
+                            <option selected>Выберите специализацию врача</option>
+                            <option value="участковый">Участковый</option>
+                            <option value="лор">Лор</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <button type="submit"><span class="txt_regularfont"> Создать </span></button>
+                    </div>
+                </form>
+            </div>
         </section>
 
     </div>
 </div>
+<script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/classic/ckeditor.js"></script>
+<script src="front-end/js/patient.js"></script>
 </body>
 
 </html>

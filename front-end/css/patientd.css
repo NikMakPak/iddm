@@ -97,6 +97,16 @@ body {
     height: 45px;
     margin-right: 40px;
 }
+.logout{
+    display: flex;
+}
+.user{
+    background-color: #20807F;
+    cursor: default;
+}
+.user:hover{
+    opacity: 1;
+}
 
 h1,
 h2,
@@ -197,19 +207,26 @@ h3 {
     border-bottom: none;
 }
 
-.fa-stethoscope {
+.fa-stethoscope,.fa-rectangle-xmark,.fa-rotate-right {
     font-size: 35px;
 }
 
 .doc-area {
     margin: 20px auto;
+    display: flex;
 }
 
 .add-doc {
     width: 200px;
     height: 65px;
     background-color: #20807F;
+    margin: 0 5px;
 }
+.reload-btn{
+    padding: 0;
+    width: 71px;
+}
+
 
 .fa-plus-square {
     font-size: 40px;
@@ -259,8 +276,8 @@ h3 {
 }
 
 .docs tbody>tr>td {
-    font-size: 13px;
-    color: #354251;
+    font-size: 16px;
+    color: #000;
     line-height: 33px;
 }
 
@@ -274,7 +291,102 @@ h3 {
 
 .docs tbody>tr:hover td {
     background-color: #f9fafb;
-    color: #354251;
     cursor: pointer;
     filter: drop-shadow(0px 10px 6px rgba(32, 128, 127, 0.20));
+}
+
+
+/* popup */
+
+.hide {
+    display: none;
+}
+
+.doc-popup {
+    box-shadow: 0px 0px 10px rgba(32, 128, 127, 0.5);
+    border-radius: 4px;
+}
+
+.popup-title {
+    color: #20807F;
+}
+
+.doc-popup .cap {
+    background-color: #f9fafb;
+    filter: drop-shadow(0px 10px 15px rgba(32, 128, 127, 0.20));
+    border-bottom: none;
+    border-top: 4px solid #20807F;
+    border-radius: 4px;
+    height: 55px;
+}
+
+
+/* doc form */
+
+.form {
+    width: 100%;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #E6E6E6;
+    font-size: 18px;
+    font-weight: 600;
+    color: #204040;
+}
+
+form button {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 34px;
+    border: none;
+    outline: none;
+    background-color: #20807F;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    transition: .3s;
+}
+
+form button:hover {
+    opacity: .7;
+}
+
+form {
+    padding: 15px 15px;
+    background-color: #214040;
+}
+
+.field {
+    margin: 15px 0;
+}
+
+.txt-area {
+    height: 250px;
+}
+
+.down {
+    justify-content: space-evenly;
+}
+
+.down-form {
+    width: 400px;
+}
+/* cke editor*/
+.ck-dropdown__button{
+    transform: translateX(7px);
+}
+.ck-off{
+    transform: translateX(-4px);
+}
+.ck-dropdown__panel_se{
+    transform: translateX(120px);
+}
+.ck-blurred > h1,h2,h3{
+    color: #204040;
+}
+.ck-editor__editable_inline, .ck-blurred{
+    height: 250px;
 }

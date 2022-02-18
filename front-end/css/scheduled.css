@@ -84,7 +84,16 @@ footer {
     background-color: #3d5e61;
     padding-right: 25px;
 }
-
+.logout{
+    display: flex;
+}
+.user{
+    background-color: #20807F;
+    cursor: default;
+}
+.user:hover{
+    opacity: 1;
+}
 h1,
 h2,
 h3 {
