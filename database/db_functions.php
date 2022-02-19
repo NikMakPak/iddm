@@ -108,11 +108,3 @@ function update($table,$id_name,$id,$params){
     $sql = "UPDATE $table SET $str WHERE $id_name = $id";
     return makeCheckedQuery($sql,false,$params);
 }
-
-////проверка id доктора ??? браузер запоминает id даж при закрытии вкладки
-//function isLogin($session, $passw){
-//    if ((!empty($session)) and ($session['password'] === $passw)){
-//        $dr = $session;
-//        $_SESSION['id'] = $dr['id_dr'];
-//        $_SESSION['fio'] = $dr['fio'];
-//}

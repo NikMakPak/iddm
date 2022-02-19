@@ -4,7 +4,7 @@ $patient = selectOne('users_medcard', ['id_patient'=>$_GET['id']]);
 if (((empty($patient))==true) or (isset($_GET['id'])!=true)){
     header('location: ' . $BASE_URL);
 }
-include "actions/upload_doc.php";
+include "actions/upload_upd_doc.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">
