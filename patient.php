@@ -97,13 +97,14 @@ include "actions/upload_doc.php";
                     <td>Статус</td>
                 </tr>
                 </thead>
+
                 <tbody>
                 <?php
                 $spec_name=(selectOne('dr_id_list',['spec_dr_id'=>$_SESSION['id']]))['spec_name'];
                 $docs=selectAll('docs',['id_patient'=>$_GET['id'],'for_spec_name'=>$spec_name]);
                 if (!empty($docs)) {
                     for ($i = 0; $i <= (count($docs) - 1); $i++) {
-                        echo '<tr>
+                        echo '<tr ' . 'onclick="window.location.href=' . "'" . $BASE_URL . 'doc_read-upd.php?id=' . $_GET['id'] . "&id_doc=" . $docs[$i]['id_doc'] . "'" . '; return false"> 
                     <td>' . $docs[$i]['title'] . '</td>
                     <td>' . $docs[$i]['type'] . '</td>
                     <td>' . $docs[$i]['add_time'] . '</td>

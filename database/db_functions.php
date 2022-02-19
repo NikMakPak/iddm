@@ -91,6 +91,7 @@ function insert($table, $params){
 }
 
 //обновление данных в таблице БД
+//$id_name - это назвние столба id в бд
 function update($table,$id_name,$id,$params){
     global $pdo;
     $i=0;
@@ -104,7 +105,7 @@ function update($table,$id_name,$id,$params){
         }
         $i++;
     }
-    $sql = "UPDATE $table SET $str WHERE $id_name=$id";
+    $sql = "UPDATE $table SET $str WHERE $id_name = $id";
     return makeCheckedQuery($sql,false,$params);
 }
 
