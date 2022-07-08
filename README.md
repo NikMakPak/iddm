@@ -13,6 +13,8 @@
 3. JS
 4. mySQL
 5. phpMyAdmin
+6. git
+7. events and http methods
 - _Демонстрация_: 
 Гитхаб не поддерживает php сайты. Поэтому ссылка на [видео-демонстрацию](https://drive.google.com/file/d/1rWaG3rlAa4h9fhogcEvgX93qHS9PCSch/view?usp=sharing)
 - _PDF_: 
