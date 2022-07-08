@@ -14,6 +14,6 @@
 4. mySQL
 5. phpMyAdmin
 - _Демонстрация_: 
-Гитхаб не поддерживает php сайты. Поэтому ссылка на [видео-демонстрацию](https://drive.google.com/file/d/1rWaG3rlAa4h9fhogcEvgX93qHS9PCSch/view?usp=sharing).
+Гитхаб не поддерживает php сайты. Поэтому ссылка на [видео-демонстрацию](https://drive.google.com/file/d/1rWaG3rlAa4h9fhogcEvgX93qHS9PCSch/view?usp=sharing)
 - _PDF_: 
 Прикреплена [ссылка на презентацию проекта с конкурса](https://docs.google.com/presentation/d/1bk3t3ejdBzJKp4tVZOjZhIWKRC8kw7NO/edit?usp=sharing&ouid=115022703188329207652&rtpof=true&sd=true)
